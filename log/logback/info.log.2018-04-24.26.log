@@ -1,0 +1,20 @@
+2018-04-24 23:18:13,507 INFO  o.s.web.context.ContextLoader[285] - Root WebApplicationContext: initialization completed in 1494 ms
+2018-04-24 23:18:14,080 INFO  o.s.b.w.s.ServletRegistrationBean[185] - Servlet dispatcherServlet mapped to [/]
+2018-04-24 23:18:14,083 INFO  o.s.b.w.s.FilterRegistrationBean[244] - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-24 23:18:14,084 INFO  o.s.b.w.s.FilterRegistrationBean[244] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-24 23:18:14,084 INFO  o.s.b.w.s.FilterRegistrationBean[244] - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-24 23:18:14,084 INFO  o.s.b.w.s.FilterRegistrationBean[244] - Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-24 23:18:14,084 INFO  o.s.b.w.s.FilterRegistrationBean[244] - Mapping filter: 'httpTraceFilter' to: [/*]
+2018-04-24 23:18:14,084 INFO  o.s.b.w.s.FilterRegistrationBean[244] - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-04-24 23:18:14,269 INFO  com.zaxxer.hikari.HikariDataSource[110] - DatebookHikariCP - Starting...
+2018-04-24 23:18:14,464 INFO  com.zaxxer.hikari.HikariDataSource[123] - DatebookHikariCP - Start completed.
+2018-04-24 23:18:14,499 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean[361] - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-24 23:18:14,509 INFO  o.h.jpa.internal.util.LogHelper[31] - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-04-24 23:18:14,557 INFO  org.hibernate.Version[45] - HHH000412: Hibernate Core {5.2.16.Final}
+2018-04-24 23:18:14,559 INFO  org.hibernate.cfg.Environment[213] - HHH000206: hibernate.properties not found
+2018-04-24 23:18:14,586 INFO  o.h.annotations.common.Version[66] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-04-24 23:18:14,659 INFO  org.hibernate.dialect.Dialect[157] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-04-24 23:18:14,993 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean[415] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 23:18:15,244 INFO  o.s.w.s.h.SimpleUrlHandlerMapping[373] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]

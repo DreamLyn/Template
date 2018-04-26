@@ -1,0 +1,46 @@
+#tomcat
+server:
+  port: 8090
+###########################################################################################
+#spring相关配置
+spring: 
+  #数据库部分
+  datasource: 
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: dreamlyn
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  ##aspectj
+  aop:
+    proxy-target-class: true
+  #banner
+  banner:
+    location: classpath:config/banner.txt
+#确定激活的配置文件
+  profiles:
+    active: dev
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+    
+#####################################################################################
+
+logging:
+  config: classpath:config/logback-spring.xml
+  path: ./log/logback
+ 
+    
+    
+    
+    
+    

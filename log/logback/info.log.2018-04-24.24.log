@@ -1,0 +1,13 @@
+2018-04-24 23:17:22,120 INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/][180] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-24 23:17:22,122 INFO  o.s.web.servlet.DispatcherServlet[494] - FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-24 23:17:22,137 INFO  o.s.web.servlet.DispatcherServlet[509] - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2018-04-24 23:17:34,883 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin[132] - Application shutdown requested.
+2018-04-24 23:17:34,884 INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[993] - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@68fb2655: startup date [Tue Apr 24 23:16:57 CST 2018]; root of context hierarchy
+2018-04-24 23:17:34,886 INFO  o.s.j.e.a.AnnotationMBeanExporter[451] - Unregistering JMX-exposed beans on shutdown
+2018-04-24 23:17:34,886 INFO  o.s.j.e.a.AnnotationMBeanExporter[183] - Unregistering JMX-exposed beans
+2018-04-24 23:17:34,887 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean[597] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 23:17:34,887 INFO  com.zaxxer.hikari.HikariDataSource[381] - DatebookHikariCP - Shutdown initiated...
+2018-04-24 23:17:34,889 INFO  com.zaxxer.hikari.HikariDataSource[383] - DatebookHikariCP - Shutdown completed.
+2018-04-24 23:18:11,979 INFO  com.lyn.template.TemplateApplication[50] - Starting TemplateApplication on liyanandeMacBook-Pro.local with PID 25719 (/Users/lyn/workspace/spring/Template/target/classes started by lyn in /Users/lyn/workspace/spring/Template)
+2018-04-24 23:18:11,980 INFO  com.lyn.template.TemplateApplication[663] - The following profiles are active: dev
+2018-04-24 23:18:12,013 INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[590] - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@20f061b0: startup date [Tue Apr 24 23:18:12 CST 2018]; root of context hierarchy

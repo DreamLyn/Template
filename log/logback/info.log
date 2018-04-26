@@ -1,0 +1,6 @@
+2018-04-25 19:32:57,181 INFO  com.lyn.template.TemplateApplication[50] - Starting TemplateApplication on liyanandeMacBook-Pro.local with PID 25719 (/Users/lyn/workspace/spring/Template/target/classes started by lyn in /Users/lyn/workspace/spring/Template)
+2018-04-25 19:32:57,182 INFO  com.lyn.template.TemplateApplication[663] - The following profiles are active: dev
+2018-04-25 19:32:57,185 INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[590] - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3c7da2c8: startup date [Wed Apr 25 19:32:57 CST 2018]; root of context hierarchy
+2018-04-25 19:37:01,147 INFO  com.lyn.template.TemplateApplication[50] - Starting TemplateApplication on liyanandeMacBook-Pro.local with PID 25719 (/Users/lyn/workspace/spring/Template/target/classes started by lyn in /Users/lyn/workspace/spring/Template)
+2018-04-25 19:37:01,147 INFO  com.lyn.template.TemplateApplication[663] - The following profiles are active: dev
+2018-04-25 19:37:01,150 INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[590] - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@65d7361d: startup date [Wed Apr 25 19:37:01 CST 2018]; root of context hierarchy

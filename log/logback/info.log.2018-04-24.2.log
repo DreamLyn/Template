@@ -1,0 +1,21 @@
+2018-04-24 22:59:09,401 INFO  o.h.jpa.internal.util.LogHelper[31] - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-04-24 22:59:09,446 INFO  org.hibernate.Version[45] - HHH000412: Hibernate Core {5.2.16.Final}
+2018-04-24 22:59:09,447 INFO  org.hibernate.cfg.Environment[213] - HHH000206: hibernate.properties not found
+2018-04-24 22:59:09,474 INFO  o.h.annotations.common.Version[66] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-04-24 22:59:09,545 INFO  org.hibernate.dialect.Dialect[157] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-04-24 22:59:09,889 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean[415] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-04-24 22:59:09,969 INFO  o.s.w.s.h.SimpleUrlHandlerMapping[373] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:59:10,198 INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter[574] - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7219b0f0: startup date [Tue Apr 24 22:59:06 CST 2018]; root of context hierarchy
+2018-04-24 22:59:10,271 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping[547] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-24 22:59:10,272 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping[547] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 22:59:10,301 INFO  o.s.w.s.h.SimpleUrlHandlerMapping[373] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:59:10,302 INFO  o.s.w.s.h.SimpleUrlHandlerMapping[373] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 22:59:10,799 INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration[84] - 
+
+Using generated security password: 9de5d119-855a-4fde-9505-ac50458d27b8
+
+2018-04-24 22:59:10,937 INFO  o.s.s.web.DefaultSecurityFilterChain[43] - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ce839c6, org.springframework.security.web.context.SecurityContextPersistenceFilter@116d8fab, org.springframework.security.web.header.HeaderWriterFilter@65e3b004, org.springframework.security.web.csrf.CsrfFilter@53ce6196, org.springframework.security.web.authentication.logout.LogoutFilter@4efb5ff6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@619158fe, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6c2f7f52, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1d531740, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d265822, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9feed96, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52a80498, org.springframework.security.web.session.SessionManagementFilter@ef89889, org.springframework.security.web.access.ExceptionTranslationFilter@363a9076, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@210de8c]
+2018-04-24 22:59:11,004 INFO  o.s.b.d.a.OptionalLiveReloadServer[57] - LiveReload server is running on port 35729
+2018-04-24 22:59:11,015 INFO  o.s.b.a.e.web.EndpointLinksResolver[59] - Exposing 2 endpoint(s) beneath base path '/actuator'

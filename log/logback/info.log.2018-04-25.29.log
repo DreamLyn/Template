@@ -1,0 +1,13 @@
+2018-04-25 19:05:10,212 INFO  o.s.b.d.a.OptionalLiveReloadServer[57] - LiveReload server is running on port 35729
+2018-04-25 19:05:10,217 INFO  o.s.b.a.e.web.EndpointLinksResolver[59] - Exposing 2 endpoint(s) beneath base path '/actuator'
+2018-04-25 19:05:10,220 INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping[547] - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-04-25 19:05:10,220 INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping[547] - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-04-25 19:05:10,220 INFO  o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping[547] - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-25 19:05:10,250 INFO  o.s.j.e.a.AnnotationMBeanExporter[433] - Registering beans for JMX exposure on startup
+2018-04-25 19:05:10,251 INFO  o.s.j.e.a.AnnotationMBeanExporter[895] - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-04-25 19:05:10,256 INFO  o.s.j.e.a.AnnotationMBeanExporter[668] - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-04-25 19:05:10,262 INFO  o.a.coyote.http11.Http11NioProtocol[180] - Starting ProtocolHandler ["http-nio-8090"]
+2018-04-25 19:05:10,262 INFO  o.a.tomcat.util.net.NioSelectorPool[180] - Using a shared selector for servlet write/read
+2018-04-25 19:05:10,264 INFO  o.s.b.w.e.tomcat.TomcatWebServer[206] - Tomcat started on port(s): 8090 (http) with context path ''
+2018-04-25 19:05:10,265 INFO  com.lyn.template.TemplateApplication[59] - Started TemplateApplication in 20.97 seconds (JVM running for 71246.58)
+2018-04-25 19:05:10,267 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener[56] - Condition evaluation unchanged
