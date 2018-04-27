@@ -48,7 +48,7 @@ public class ShiroRealm  extends AuthorizingRealm {
     }
 
     /**
-     * 默认使用此方法进行用户名正确与否验证，错误抛出异常即可。
+     * 默认使用此方法进行用户名正确与否验证，错误抛出异常即 可。
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth) throws AuthenticationException {

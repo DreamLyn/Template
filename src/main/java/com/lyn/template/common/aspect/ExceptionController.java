@@ -2,7 +2,9 @@ package com.lyn.template.common.aspect;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.lyn.template.common.data.SystemConfig;
 import org.apache.shiro.ShiroException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -13,18 +15,21 @@ import com.lyn.template.common.schema.ResponseBean;
 
 @RestControllerAdvice
 public class ExceptionController {
+    @Autowired
+    private SystemConfig systemConfig;
+
 	// 捕捉shiro的异常
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(ShiroException.class)
     public ResponseBean handle401(ShiroException e) {
-        return new ResponseBean(401, e.getMessage(), null);
+        return new ResponseBean(systemConfig.getPermission(), e.getMessage(), null);
     }
 
     // 捕捉UnauthorizedException
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(UnauthorizedException.class)
     public ResponseBean handle401() {
-        return new ResponseBean(401, "Unauthorized", null);
+        return new ResponseBean(systemConfig.getPermission(), "Unauthorized", null);
     }
 
     // 捕捉其他所有异常
