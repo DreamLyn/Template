@@ -7,9 +7,9 @@ spring:
   #数据库部分
   datasource: 
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8
-    username: root
-    password: dreamlyn
+    url: jdbc:mysql://39.107.74.145:3306/template?useUnicode=true&characterEncoding=UTF-8
+    username: template
+    password: Template->123
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       minimum-idle: 5

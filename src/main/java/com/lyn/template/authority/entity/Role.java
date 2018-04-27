@@ -3,7 +3,6 @@ package com.lyn.template.authority.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
@@ -15,7 +14,4 @@ public class Role {
 	@GeneratedValue
 	private long id;
 	private String name;
-	
-	@ManyToOne
-	private UserRole userRole;
 }

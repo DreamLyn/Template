@@ -8,5 +8,4 @@ import com.lyn.template.authority.entity.Role;
 
 public interface RoleRepository extends JpaRepository<Role, Long>{
 	
-	List<Role> findByUserRole_userId(long userId);
 }

@@ -1,5 +1,6 @@
 package com.lyn.template.authority.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class RoleService{
 	 * @return
 	 */
 	public List<Role> getRoleByUserId(long userId){
-		return roleRepository.findByUserRole_userId(userId);
+//		return roleRepository.findByUserRole_userId(userId);
+		return new ArrayList<>();
 	}
 }

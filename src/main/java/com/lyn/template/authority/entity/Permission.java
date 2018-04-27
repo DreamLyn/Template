@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Permission {
+public class Permission{
 	@Id
 	@GeneratedValue
 	private long id;
@@ -22,4 +22,5 @@ public class Permission {
 	 * 预留，为后期支持restful
 	 */
 	private String method;
+
 }
