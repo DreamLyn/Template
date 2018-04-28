@@ -1,8 +1,0 @@
-2018-04-27 08:18:47,312 INFO  com.lyn.template.TemplateApplication[59] - Started TemplateApplication in 26.714 seconds (JVM running for 30.852)
-2018-04-27 08:36:59,494 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin[132] - Application shutdown requested.
-2018-04-27 08:36:59,494 INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[989] - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@14af888: startup date [Fri Apr 27 08:18:22 CST 2018]; root of context hierarchy
-2018-04-27 08:36:59,494 INFO  o.s.j.e.a.AnnotationMBeanExporter[452] - Unregistering JMX-exposed beans on shutdown
-2018-04-27 08:36:59,494 INFO  o.s.j.e.a.AnnotationMBeanExporter[183] - Unregistering JMX-exposed beans
-2018-04-27 08:36:59,494 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean[572] - Closing JPA EntityManagerFactory for persistence unit 'default'
-2018-04-27 08:36:59,494 INFO  com.zaxxer.hikari.HikariDataSource[381] - DatebookHikariCP - Shutdown initiated...
-2018-04-27 08:36:59,510 INFO  com.zaxxer.hikari.HikariDataSource[383] - DatebookHikariCP - Shutdown completed.

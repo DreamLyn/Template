@@ -37,7 +37,7 @@ spring:
 
 logging:
   config: classpath:config/logback-spring.xml
-  path: ./log/logback
+  path: ../log/logback
  
     
     

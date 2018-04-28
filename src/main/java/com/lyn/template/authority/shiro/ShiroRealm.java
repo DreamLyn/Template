@@ -29,8 +29,9 @@ public class ShiroRealm  extends AuthorizingRealm {
         return token instanceof JWTToken;
     }
 
+
     /**
-     * 只有当需要检测用户权限的时候才会调用此方法，例如checkRole,checkPermission之类的
+     * 用户权限认证,如checkRole,checkPermission
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -43,12 +44,13 @@ public class ShiroRealm  extends AuthorizingRealm {
             simpleAuthorizationInfo.addStringPermissions(permission);
             return simpleAuthorizationInfo;
         }else {
-        	throw new AuthenticationException();
+        	throw new AuthenticationException("用户名不存在");
         }
     }
 
+
     /**
-     * 默认使用此方法进行用户名正确与否验证，错误抛出异常即 可。
+     * 用户身份认证
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth) throws AuthenticationException {

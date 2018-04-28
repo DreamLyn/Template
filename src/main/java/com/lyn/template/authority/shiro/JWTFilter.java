@@ -7,9 +7,16 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.lyn.template.common.data.STATUS;
+import com.lyn.template.common.schema.ResponseBean;
+import com.lyn.template.common.util.JWTUtil;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,16 +34,22 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 	}
 
 	/**
-	 *
+	 * 执行登录操作
 	 */
 	@Override
 	protected boolean executeLogin(ServletRequest request, ServletResponse response) throws Exception {
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		String authorization = httpServletRequest.getHeader("Authorization");
-
 		JWTToken token = new JWTToken(authorization);
 		// 提交给realm进行登入，如果错误他会抛出异常并被捕获
-		getSubject(request, response).login(token);
+		Subject subject=getSubject(request, response);
+		try {
+			subject.login(token);
+		} catch (IncorrectCredentialsException e) {
+			throw new IncorrectCredentialsException("密码错误");
+		} catch (UnknownAccountException e) {
+			throw new UnknownAccountException("没有此用户");
+		}
 		// 如果没有抛出异常则代表登入成功，返回true
 		return true;
 	}
