@@ -1,4 +1,4 @@
-package com.lyn.template;
+package com.lyn.template.authority;
 
 
 import lombok.extern.slf4j.Slf4j;

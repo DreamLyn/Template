@@ -86,15 +86,6 @@
 			<version>1.4.0</version>
 		</dependency>
 
-		<!-- jwt前后端分离权限 -->
-		<dependency>
-			<groupId>com.auth0</groupId>
-			<artifactId>java-jwt</artifactId>
-			<version>3.2.0</version>
-		</dependency>
-
-
-
 		<!-- 检测文件编码格式的库,放在测试环境使用 -->
 		<dependency>
 			<groupId>net.sourceforge.cpdetector</groupId>

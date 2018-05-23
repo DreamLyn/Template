@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lyn.template.authority.service.UserService;
 import com.lyn.template.common.data.STATUS;
 import com.lyn.template.common.schema.ResponseBean;
-import com.lyn.template.common.util.JWTUtil;
 
 @RestController
 public class UserController {
@@ -37,37 +36,17 @@ public class UserController {
 			// 4、登陆
 			try {
 				currentUser.login(token);
-				return new ResponseBean(STATUS.SUCCESS, "登陆成功", JWTUtil.sign(username, password));
+				return new ResponseBean(STATUS.SUCCESS, "登陆成功", "");
 			} catch (IncorrectCredentialsException e) {
 				throw new IncorrectCredentialsException("密码错误");
 			} catch (UnknownAccountException e) {
 				throw new UnknownAccountException("没有此用户");
 			}
 		} else {
-			return new ResponseBean(STATUS.SUCCESS, "登陆成功", JWTUtil.sign(username, password));
+			return new ResponseBean(STATUS.SUCCESS, "登陆成功", "");
 		}
 	}
 	
 	
-	@PostMapping("login1")
-	public ResponseBean loginT(String username, String password) {
-		// 1、创建Subject实例
-		Subject currentUser = SecurityUtils.getSubject();
-		// 2、判断当前用户是否登陆
-		if (currentUser.isAuthenticated() == false) {
-			// 3、将用户名和密码封装成UsernamePasswordToken
-			UsernamePasswordToken token = new UsernamePasswordToken(username, password);
-			// 4、登陆
-			try {
-				currentUser.login(token);
-				return new ResponseBean(STATUS.SUCCESS, "登陆成功", JWTUtil.sign(username, password));
-			} catch (IncorrectCredentialsException e) {
-				throw new IncorrectCredentialsException("密码错误");
-			} catch (UnknownAccountException e) {
-				throw new UnknownAccountException("没有此用户");
-			}
-		} else {
-			return new ResponseBean(STATUS.SUCCESS, "登陆成功", JWTUtil.sign(username, password));
-		}
-	}
+
 }

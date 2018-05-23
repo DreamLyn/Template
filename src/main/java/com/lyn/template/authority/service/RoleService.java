@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lyn.template.authority.dao.RoleRepository;
-import com.lyn.template.authority.dao.UserRoleRepository;
 import com.lyn.template.authority.entity.Role;
 
 
@@ -15,8 +14,6 @@ import com.lyn.template.authority.entity.Role;
 public class RoleService{
 	@Autowired
 	private RoleRepository roleRepository;
-	@Autowired
-	private UserRoleRepository userRoleRepository;
 	
 	/**
 	 * 根据用户ID，获取此用户的角色
