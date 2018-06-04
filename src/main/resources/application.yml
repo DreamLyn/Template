@@ -30,7 +30,7 @@ spring:
   profiles:
     active: dev
   jpa:
-    hibernate.ddl-auto: create-drop #update
+    hibernate.ddl-auto: update
     show-sql: true
 
 #####################################################################################
