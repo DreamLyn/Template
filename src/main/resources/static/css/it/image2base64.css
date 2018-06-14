@@ -1,0 +1,43 @@
+#image2base64-upload {
+  border: 2px dashed rgb(158, 158, 158);
+  height: 100px;
+  margin-right: 40px;
+}
+
+#image2base64-upload-text {
+  font-size: 13px;
+  margin-top: 38px;
+  color: gray;
+  text-align: center;
+}
+
+#image2base64-text {
+  margin-right: 40px;
+  height: 400px;
+  border: 1px solid rgb(158, 158, 158);
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+#image2base64-text::-webkit-scrollbar {
+  width: 5px;
+}
+
+#image2base64-text::-webkit-scrollbar-track {
+  background-color: rgb(236, 236, 236);
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+#image2base64-text::-webkit-scrollbar-thumb {
+  background-color: rgb(207, 207, 207);
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+#image2base64-image {
+  margin-top: 10px;
+  width: 300px;
+}

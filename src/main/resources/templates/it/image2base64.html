@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>图片Base64编码</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="icon" type="image/png" th:href="@{/images/icons/favicon.png}">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" th:href="@{/images/icons/app-icon72x72@2x.png}">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="图片Base64编码" />
+    <link rel="apple-touch-icon-precomposed" th:href="@{/images/icons/app-icon72x72@2x.png}">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" th:content="@{/images/icons/app-icon72x72@2x.png}">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" th:href="@{https://cdn.bootcss.com/amazeui/2.7.2/css/amazeui.min.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/it/image2base64.css}">
+</head>
+
+<body>
+    <div class="am-g tpl-g">
+        <!-- 头部 -->
+        <header>
+            123
+        </header>
+        <!--侧边栏菜单-->
+        <div class="left-sidebar">
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-heading">Components
+                    <span class="sidebar-nav-heading-info"> 附加组件</span>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="index.html" class="active">
+                        <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="tables.html">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 表格
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--内容区域,在此添加websocket调试部分代码-->
+        <div class="tpl-content-wrapper">
+            <div id="image2base64-upload">
+                <input type="file" id="image2base64-file" style="display:none">
+                <p id="image2base64-upload-text">拖放图片到这里上传，或者
+                    <a href="javascript:;" id="image2base64-upload-select">选择图片</a>
+                </p>
+            </div>
+            <p>base64:</p>
+            <p id="image2base64-text"></p>
+            <img id="image2base64-image" />
+        </div>
+    </div>
+    <script th:src="@{https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js}"></script>
+    <script th:src="@{https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js}"></script>
+    <script th:src="@{https://cdn.bootcss.com/Base64/1.0.0/base64.min.js}"></script>
+    <script th:src="@{/js/it/image2base64.js}"></script>
+</body>
+
+</html>

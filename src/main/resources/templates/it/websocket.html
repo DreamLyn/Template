@@ -2,95 +2,127 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WebSocket调试助手</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WebSocket调试助手</title>
 
-    <!-- Set render engine for 360 browser -->
-    <meta name="renderer" content="webkit">
+	<!-- Set render engine for 360 browser -->
+	<meta name="renderer" content="webkit">
 
-    <!-- No Baidu Siteapp-->
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
+	<!-- No Baidu Siteapp-->
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <link rel="icon" type="image/png" th:href="@{/i/favicon.png}">
+	<link rel="icon" type="image/png" th:href="@{/images/icons/favicon.png}">
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" th:href="@{/i/app-icon72x72@2x.png}">
+	<!-- Add to homescreen for Chrome on Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" sizes="192x192" th:href="@{/images/icons/app-icon72x72@2x.png}">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="apple-touch-icon-precomposed" th:href="@{/i/app-icon72x72@2x.png}">
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="WebSocket调试助手" />
+	<link rel="apple-touch-icon-precomposed" th:href="@{/images/icons/app-icon72x72@2x.png}">
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" th:content="@{/i/app-icon72x72@2x.png}">
-    <meta name="msapplication-TileColor" content="#0e90d2">
+	<!-- Tile icon for Win8 (144x144 + tile color) -->
+	<meta name="msapplication-TileImage" th:content="@{/images/icons/app-icon72x72@2x.png}">
+	<meta name="msapplication-TileColor" content="#0e90d2">
 
-    <link rel="stylesheet" th:href="@{https://cdn.bootcss.com/amazeui/2.7.2/css/amazeui.min.css}">
-    <link rel="stylesheet" th:href="@{/css/app.css}">
+	<link rel="stylesheet" th:href="@{https://cdn.bootcss.com/amazeui/2.7.2/css/amazeui.min.css}">
+	<link rel="stylesheet" th:href="@{/css/main.css}">
+	<link rel="stylesheet" th:href="@{/css/it/websocket.css}">
 </head>
 
 <body>
-    <div class="am-g tpl-g">
-        <!-- 头部 -->
-        <header>
+	<div class="am-g tpl-g">
+		<!-- 头部 -->
+		<header class="am-topbar">
 
-            123
+			<h1 class="am-topbar-brand">
+				<a href="#" th:text="${name}">DreamLyn</a>
+			</h1>
+			<ul class="am-nav am-nav-pills am-topbar-nav" th:each="menuItem:${menuItems}">
+				<li th:class="${menuItem.sequence==0}?'am-active':''">
+					<a href="#" th:text="${menuItem.menuValue}">
 
-        </header>
+					</a>
+				</li>
+			</ul>
+		</header>
 
-        <!--侧边栏菜单-->
-        <div class="left-sidebar">
-            <ul class="sidebar-nav">
-                <li class="sidebar-nav-heading">Components
-                    <span class="sidebar-nav-heading-info"> 附加组件</span>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="index.html" class="active">
-                        <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="tables.html">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 表格
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!--内容区域,在此添加websocket调试部分代码-->
-        <div class="tpl-content-wrapper">
+		<!--侧边栏菜单-->
+		<div class="left-sidebar">
+			<ul class="am-list admin-sidebar-list" id="collapase-nav-1">
+				<li class="am-panel" th:each="menuItemsVice,menuItemsViceStat:${menuItemsVices}">
+					<a data-am-collapse="{parent: '#collapase-nav-1'}" th:if="${menuItemsVice.menuItems.size()==0}" th:href="@{${menuItemsVice.url}}">
+						<i class="am-margin-left-sm" th:text="${menuItemsVice.menuValue}"></i>
+					</a>
 
-            <form class="am-form-inline">
-                <div class="am-form-group">
-                    <input type="text" id="websocket-address" class="am-form-field" placeholder="输入websocket服务器地址">
-                </div>
+					<a th:attr="data-am-collapse=${'{parent: #collapase-nav-1, target: #menu-1}'}" th:if="${menuItemsVice.menuItems.size()!=0}">
+						<i class="am-margin-left-sm" th:text="${menuItemsVice.menuValue}"></i>
+						<i class="am-icon-angle-right am-fr am-margin-right"></i>
+					</a>
 
-                <button class="am-btn am-btn-default" id="websocket-connect">连接</button>
-                <button class="am-btn am-btn-default" id="websocket-disconnect">断开</button>
+					<ul class="am-list am-collapse admin-sidebar-sub" th:attr="id=${'menu-'+menuItemsViceStat.index}">
+						<li>
+							<a href="#/userAdd">
+								<i class="am-icon-user am-margin-left-sm"></i> 添加人员 </a>
+						</li>
+						<li>
+							<a href="#/userList/0">
+								<i class="am-icon-user am-margin-left-sm"></i> 人员列表 </a>
+						</li>
+					</ul>
+				</li>
 
-            </form>
+				<!-- <li class="am-panel" th:if="${menuItemsVice.menuItems.size()!=0}">
+					<a data-am-collapse="{parent: '#collapase-nav-1'}">
+						<i class="am-margin-left-sm" th:text="${menuItemsVice.menuValue}"></i>
+						<i class="am-icon-angle-right am-fr am-margin-right"></i>
+					</a> -->
+				<!-- <ul class="am-list am-collapse admin-sidebar-sub" id="user-nav">
+						<li>
+							<a href="#/userAdd">
+								<i class="am-icon-user am-margin-left-sm"></i> 添加人员 </a>
+						</li>
+						<li>
+							<a href="#/userList/0">
+								<i class="am-icon-user am-margin-left-sm"></i> 人员列表 </a>
+						</li>
+					</ul> -->
+				<!-- </li> -->
+			</ul>
 
-            <div  id="websocket-output">
-                
-            </div>
-            <span class="am-icon-trash" id="websocket-clear">清空</span>
-            <form class="am-form-inline">
-                <div class="am-form-group">
-                    <input type="text" id="websocket-message" class="am-form-field" placeholder="输入要发送的信息">
-                </div>
-                <button class="am-btn am-btn-default" id="websocket-send">发送</button>
-            </form>
-        </div>
+		</div>
+		<!--内容区域,在此添加websocket调试部分代码-->
+		<div class="tpl-content-wrapper">
 
-    </div>
+			<form class="am-form-inline">
+				<div class="am-form-group">
+					<input type="text" id="websocket-address" class="am-form-field" placeholder="输入websocket服务器地址">
+				</div>
+				<button class="am-btn am-btn-default" id="websocket-connect">连接</button>
+				<button class="am-btn am-btn-default" id="websocket-disconnect">断开</button>
+			</form>
 
-    <script th:src="@{https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js}"></script>
-    <script th:src="@{https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js}"></script>
-    <script th:src="@{/js/custom/websocket.js}"></script>
+			<div id="websocket-output"></div>
+			<span class="am-icon-trash" id="websocket-clear">清空</span>
+			<form class="am-form-inline">
+				<div class="am-form-group">
+					<input type="text" id="websocket-message" class="am-form-field" placeholder="输入要发送的信息">
+				</div>
+				<button class="am-btn am-btn-default" id="websocket-send">发送</button>
+			</form>
+		</div>
+
+	</div>
+
+	<script th:src="@{https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js}"></script>
+	<script th:src="@{https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js}"></script>
+	<script th:src="@{/js/it/websocket.js}"></script>
 </body>
+
 </html>

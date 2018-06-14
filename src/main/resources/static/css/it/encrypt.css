@@ -1,0 +1,26 @@
+.tpl-content-wrapper {
+  min-width: 750px;
+}
+
+#encrypt-left {
+  float: left;
+  padding: 10px;
+  width: 300px;
+  height: 500px;
+  border: 1px solid rgb(199, 199, 199);
+}
+
+#encrypt-center {
+  float: left;
+  padding: 10px;
+  width: 150px;
+  height: 500px;
+}
+
+#encrypt-right {
+  float: left;
+  padding: 10px;
+  width: 300px;
+  height: 500px;
+  border: 1px solid rgb(199, 199, 199);
+}
