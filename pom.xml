@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.lyn.template</groupId>
+	<groupId>com.lyn</groupId>
 	<artifactId>Template</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
@@ -23,6 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<aliyun.oss.version>3.0.0</aliyun.oss.version>
 	</properties>
 
 	<dependencies>
@@ -38,6 +39,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
+		<!--Redis缓存部分-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+		</dependency>
+
+		<!--邮件收发-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
@@ -85,14 +102,18 @@
 			<artifactId>shiro-spring</artifactId>
 			<version>1.4.0</version>
 		</dependency>
-
-		<!-- 检测文件编码格式的库,放在测试环境使用 -->
+		<!-- 阿里云OSS服务器 -->
 		<dependency>
-			<groupId>net.sourceforge.cpdetector</groupId>
-			<artifactId>cpdetector</artifactId>
-			<version>1.0.7</version>
+			<groupId>com.aliyun.oss</groupId>
+			<artifactId>aliyun-sdk-oss</artifactId>
+			<version>${aliyun.oss.version}</version>
 		</dependency>
-
+		<!--工具类-->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+		</dependency>
 
 		<!-- 测试相关 -->
 		<dependency>
@@ -118,13 +139,13 @@
 
 	<repositories>
 		<repository>
-			<id>special</id>
-			<url>http://maven.nuiton.org/nexus/content/groups/releases/</url>
-		</repository>
-		<repository>
 			<id>alimaven</id>
 			<name>aliyun maven</name>
 			<url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+		</repository>
+		<repository>
+			<id>special</id>
+			<url>http://maven.nuiton.org/nexus/content/groups/releases/</url>
 		</repository>
 	</repositories>
 </project>
