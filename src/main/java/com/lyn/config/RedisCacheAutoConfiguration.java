@@ -12,8 +12,8 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.io.Serializable;
 
-@Configuration
-@AutoConfigureAfter(RedisAutoConfiguration.class)
+//@Configuration
+//@AutoConfigureAfter(RedisAutoConfiguration.class)
 public class RedisCacheAutoConfiguration {
     /**
      * 默认情况下的模板只能支持RedisTemplate<String, String>，

@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
  * Shiro内部相应的组件（DefaultSecurityManager）会自动检测相应的对象（如Realm）是否实现了CacheManagerAware并自动注入相应的CacheManager。
  */
 @Slf4j
-@Component
+//@Component
 public class RedisSessionDao extends CachingSessionDAO {
 
     // 保存到Redis中key的前缀 prefix+sessionId

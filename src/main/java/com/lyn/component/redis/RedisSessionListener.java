@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @auther hxy
  * @date 2017-09-25 11:45:11
  */
-@Component
+//@Component
 public class RedisSessionListener extends SessionListenerAdapter {
 
     private static final Logger logger = LoggerFactory.getLogger(RedisSessionListener.class);

@@ -1,7 +1,8 @@
 package com.lyn.modules.common.validator;
 
-import com.hxy.modules.common.common.RRException;
-import org.apache.commons.lang.StringUtils;
+
+import com.lyn.modules.common.common.RRException;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * 类Assert的功能描述:

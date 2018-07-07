@@ -14,8 +14,8 @@ import java.lang.reflect.Method;
 /**
  * 配置cache
  */
-@Configuration
-@EnableCaching
+//@Configuration
+//@EnableCaching
 public class CacheConfig extends CachingConfigurerSupport{
     @Nullable
     @Override

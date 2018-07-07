@@ -1,9 +1,6 @@
 package com.lyn.modules.common.validator;
 
-
-
-import com.hxy.modules.common.common.RRException;
-import com.hxy.modules.common.exception.MyException;
+import com.lyn.modules.common.common.RRException;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -34,7 +31,7 @@ public class ValidatorUtils {
         Set<ConstraintViolation<Object>> constraintViolations = validator.validate(object, groups);
         if (!constraintViolations.isEmpty()) {
         	ConstraintViolation<Object> constraint = (ConstraintViolation<Object>)constraintViolations.iterator().next();
-            throw new MyException(constraint.getMessage());
+            //throw new MyException(constraint.getMessage());
         }
     }
 }

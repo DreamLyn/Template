@@ -14,20 +14,18 @@ import java.util.Optional;
 @Slf4j
 @Service
 public class MenuService {
-	@Autowired
-	private MenuRepository menuRepository;
+    @Autowired
+    private MenuRepository menuRepository;
 
 
-	/**
-	 * 获取所有menu
-	 * @return
-	 */
-	public List<Menu> getAllMenu(){
-		return menuRepository.findAll();
-	}
-	
-
-
+    /**
+     * 获取所有menu
+     *
+     * @return
+     */
+    public List<Menu> getAllMenu() {
+        return menuRepository.findAll();
+    }
 
 
 }

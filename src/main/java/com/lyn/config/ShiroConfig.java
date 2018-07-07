@@ -18,7 +18,7 @@ import org.springframework.web.servlet.HandlerExceptionResolver;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-@Configuration
+//@Configuration
 public class ShiroConfig {
     /**
      * Shiro过滤器
