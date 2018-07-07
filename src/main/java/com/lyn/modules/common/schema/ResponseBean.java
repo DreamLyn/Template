@@ -2,8 +2,10 @@ package com.lyn.modules.common.schema;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class ResponseBean {
 	// http 状态码

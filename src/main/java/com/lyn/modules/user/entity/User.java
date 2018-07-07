@@ -2,15 +2,7 @@
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import com.lyn.modules.user.bean.Gender;
 
@@ -36,4 +28,5 @@ public class User{
 	
 //	@Lob //处理大文本
 //	@Basic(fetch=FetchType.LAZY) //如果文件特别大,使用懒加载,使得内存占用小一些
+//	@Transient   //不进行持久化
 }
