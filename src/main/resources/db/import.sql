@@ -1,1 +1,0 @@
-insert into menu (id,platform_id,parent_id,module_name,url,type,module_path,used,level,showorder,create_time,update_time) values (1,0,0,'系统设置','#',1,1,1,1,1,now(),now());

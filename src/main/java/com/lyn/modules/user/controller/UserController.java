@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lyn.modules.user.service.UserService;
 import com.lyn.modules.common.data.STATUS;
-import com.lyn.modules.common.schema.ResponseBean;
+import com.lyn.modules.common.schema.Result;
 
 @RestController
 public class UserController {
@@ -26,7 +26,7 @@ public class UserController {
 	 * @return
 	 */
 	@PostMapping("/login")
-	public ResponseBean login(String username, String password) {
+	public Result login(String username, String password) {
 		// 1、创建Subject实例
 		Subject currentUser = SecurityUtils.getSubject();
 		// 2、判断当前用户是否登陆
@@ -36,14 +36,14 @@ public class UserController {
 			// 4、登陆
 			try {
 				currentUser.login(token);
-				return new ResponseBean(STATUS.SUCCESS, "登陆成功", "");
+				return new Result(STATUS.SUCCESS, "登陆成功", "");
 			} catch (IncorrectCredentialsException e) {
 				throw new IncorrectCredentialsException("密码错误");
 			} catch (UnknownAccountException e) {
 				throw new UnknownAccountException("没有此用户");
 			}
 		} else {
-			return new ResponseBean(STATUS.SUCCESS, "登陆成功", "");
+			return new Result(STATUS.SUCCESS, "登陆成功", "");
 		}
 	}
 	

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseBean {
+public class Result {
 	// http 状态码
 	private int code;
 	// 返回信息

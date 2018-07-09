@@ -1,22 +1,16 @@
 package com.lyn.modules.menu.controller;
 
 import com.lyn.modules.common.data.STATUS;
-import com.lyn.modules.common.schema.ResponseBean;
+import com.lyn.modules.common.schema.Result;
 import com.lyn.modules.menu.entity.Menu;
 import com.lyn.modules.menu.service.MenuService;
-import com.lyn.modules.user.service.UserService;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.UnknownAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/menu")
 public class MenuController {
 
     @Autowired
@@ -27,13 +21,41 @@ public class MenuController {
      *
      * @return
      */
-    @PostMapping("/menu/get/all")
-    public ResponseBean getAllMenu() {
-        ResponseBean responseBean = new ResponseBean();
+    @PostMapping("/get/all")
+    public Result getAllMenu() {
+        Result result = new Result();
         List<Menu> menus = menuService.getAllMenu();
-        responseBean.setCode(STATUS.SUCCESS);
-        responseBean.setData(menus);
-        return responseBean;
+        result.setCode(STATUS.SUCCESS);
+        result.setData(menus);
+        return result;
+    }
+
+    /**
+     * 根据id获取其子菜单
+     *
+     * @param id
+     * @return
+     */
+    @PostMapping("/get/{id}")
+    public Result getNodeMenu(@PathVariable("id") long id) {
+        Result result = new Result();
+        List<Menu> menus = menuService.getNodeMenu(id);
+        result.setCode(STATUS.SUCCESS);
+        result.setData(menus);
+        return result;
+    }
+
+    /**
+     * 修改
+     * @param menu
+     * @return
+     */
+    @PostMapping("/save")
+    public Result updateMenu(@RequestBody Menu menu) {
+        Result result=new Result();
+        result.setCode(STATUS.SUCCESS);
+        result.setData(menuService.saveMenu(menu));
+        return result;
     }
 
 

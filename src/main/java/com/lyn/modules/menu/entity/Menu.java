@@ -13,15 +13,47 @@ public class Menu {
     @Id
     @GeneratedValue
     private long id;
-    private long platformId;
+    /**
+     * 父ID
+     */
     private long parentId;
-    private String muduleName;
-    private String url;
+    /**
+     * 模块名
+     */
+    private String label;
+    /**
+     * 对应路径
+     */
+    private String path;
+    /**
+     * 对应组件
+     */
+    private String component;
+    /**
+     * 对应类型,后期有用,是按钮还是菜单 目前统一为0,菜单
+     */
     private int type;
+    /**
+     * 模块深度路径值
+     */
     private String modulePath;
+    /**
+     * 是否有用
+     */
     private int used;
+    /**
+     * 对应层级
+     */
     private int level;
-    private int showorder;
+    /**
+     * 显示顺序
+     */
+    private int showOrder;
+    /**
+     * 显示图标
+     */
+    private String icon;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;

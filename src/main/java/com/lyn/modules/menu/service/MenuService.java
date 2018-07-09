@@ -27,5 +27,21 @@ public class MenuService {
         return menuRepository.findAll();
     }
 
+    /**
+     * 根据父id获取菜单
+     * @param parendId
+     * @return
+     */
+    public List<Menu> getNodeMenu(long parendId) {
+        return menuRepository.findAllByParentId(parendId);
+    }
 
+    /**
+     * 更新
+     * @param menu
+     * @return
+     */
+    public Menu saveMenu(Menu menu){
+        return menuRepository.save(menu);
+    }
 }

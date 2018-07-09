@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service("sysOssService")
+//@Service("sysOssService")
 public class SysOssServiceImpl /*implements SysOssService*/ {
 //	@Autowired
 //	private SysOssDao sysOssDao;

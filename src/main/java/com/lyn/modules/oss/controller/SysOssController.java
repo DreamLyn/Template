@@ -19,8 +19,8 @@ import java.util.Map;
  * @auther hxy
  * @date 2017-08-25 16:17:21
  */
-@RestController
-@RequestMapping("sys/oss")
+//@RestController
+//@RequestMapping("sys/oss")
 public class SysOssController {
 //	@Autowired
 //	private SysOssService sysOssService;
