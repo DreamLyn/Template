@@ -1,7 +1,6 @@
-package com.lyn.modules.menu.entity;
+package com.lyn.modules.dict.entity;
 
 
-import com.lyn.modules.user.bean.Gender;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -9,7 +8,7 @@ import java.util.Date;
 
 @Data
 @Entity
-public class Menu {
+public class Dict {
     @Id
     @GeneratedValue
     private long id;

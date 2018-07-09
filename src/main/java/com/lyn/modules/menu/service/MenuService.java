@@ -7,6 +7,7 @@ import com.lyn.modules.user.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,10 +33,26 @@ public class MenuService {
      * @param parendId
      * @return
      */
-    public List<Menu> getNodeMenu(long parendId) {
+    public List<Menu> getMenu(long parendId) {
         return menuRepository.findAllByParentId(parendId);
     }
 
+    /**
+     * 根据父id删除菜单
+     * @param id
+     * @return
+     */
+    public void delMenu(long id) {
+        menuRepository.deleteById(id);
+    }
+
+    /**
+     * 批量删除
+     * @param ids
+     */
+    public void delMenus(List<Long> ids) {
+        menuRepository.deleteByIds(ids);
+    }
     /**
      * 更新
      * @param menu
@@ -44,4 +61,7 @@ public class MenuService {
     public Menu saveMenu(Menu menu){
         return menuRepository.save(menu);
     }
+
+
+
 }
