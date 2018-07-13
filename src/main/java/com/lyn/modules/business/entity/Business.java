@@ -1,60 +1,42 @@
 package com.lyn.modules.business.entity;
 
 
+import com.lyn.modules.audit.AbstractAuditable;
+import com.lyn.modules.local.entity.AreaInfo;
+import com.lyn.modules.oss.entity.Oss;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * 业务表
+ */
 @Data
 @Entity
-public class Business {
-    @Id
-    @GeneratedValue
-    private long id;
+public class Business extends AbstractAuditable {
     /**
-     * 父ID
+     * 业务名
      */
-    private long parentId;
+    private String name;
     /**
-     * 模块名
+     * 业务类型,暂定 1 标准业务(三流程) 2 artable图片显示 3 视频
      */
-    private String label;
+    @Column(columnDefinition = "tinyint")
+    private Integer type;
+
+
     /**
-     * 对应路径
+     * 此项业务所对应的地域(税局),一项业务只能属于一个地域.  有时候需要根据税局去获取所属地域,,可能还需要从所属地域获取业务信息
      */
-    private String path;
-    /**
-     * 对应组件
-     */
-    private String component;
-    /**
-     * 对应类型,后期有用,是按钮还是菜单 目前统一为0,菜单
-     */
-    private int type;
-    /**
-     * 模块深度路径值
-     */
-    private String modulePath;
-    /**
-     * 状态 0 无效 1有效
-     */
-    @Column(name="status",columnDefinition="tinyint default 1")
-    private int status;
-    /**
-     * 对应层级
-     */
-    private int level;
-    /**
-     * 显示顺序
-     */
-    private int sort;
-    /**
-     * 显示图标
-     */
-    private String icon;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createTime;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updateTime;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "area_id")
+    private AreaInfo areaInfo;
+
+    @ManyToMany
+    @JoinTable(name = "business_oss",
+            joinColumns = @JoinColumn(name = "business_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "oss_id", referencedColumnName = "id"))
+    private List<Oss> osss = new ArrayList<>();
 }

@@ -7,9 +7,9 @@ spring:
   #数据库部分
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://39.107.74.145:3306/template?useUnicode=true&characterEncoding=UTF-8
-        username: template
-        password: Template->123
+        url: jdbc:mysql://127.0.0.1:3306/template?useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: dreamlyn
         type: com.zaxxer.hikari.HikariDataSource
         hikari:
             minimum-idle: 5
@@ -35,21 +35,21 @@ spring:
     profiles:
         active: dev
 
-    redis:
-        database: 0
-        hostName: aliyun
-        host: 39.107.74.145
-        port: 6060
-        password: Fail->->      # 密码（默认为空）
-        timeout: 6000
-        lettuce:
-            pool:
-                max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
-                max-wait: -1      # 连接池最大阻塞等待时间（使用负值表示没有限制）
-                max-idle: 10      # 连接池中的最大空闲连接
-                min-idle: 5       # 连接池中的最小空闲连接
-    session:
-      store-type: redis           #Session存储方式
+#    redis:
+#        database: 0
+#        hostName: aliyun
+#        host: 39.107.74.145
+#        port: 6060
+#        password: Fail->->      # 密码（默认为空）
+#        timeout: 6000
+#        lettuce:
+#            pool:
+#                max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
+#                max-wait: -1      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+#                max-idle: 10      # 连接池中的最大空闲连接
+#                min-idle: 5       # 连接池中的最小空闲连接
+#    session:
+#      store-type: redis           #Session存储方式
 #####################################################################################
 
 logging:
